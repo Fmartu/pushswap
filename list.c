@@ -6,7 +6,7 @@
 /*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:43:27 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/12 18:05:56 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:00:53 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,6 @@ t_list	*createlist(int ac, char **av)
 	return (head);
 }
 
-void	print_list(t_list *top)
-{
-	t_list	*current;
-
-	current = top;
-	while (current)
-		current = current->next;
-}
-
 void	free_list(t_list *top)
 {
 	t_list	*current;
@@ -67,18 +58,5 @@ void	free_list(t_list *top)
 		temp = current;
 		current = current->next;
 		free(temp);
-	}
-}
-
-void	arrange5(t_stuff *stuff)
-{
-	if (stuff->stackb->nnumb > stuff->stackb->next->nnumb)
-		sb(stuff, SB);
-	while (stuff->stackb && stuff->stackb->nnumb)
-	{
-		if (stuff->stackb && (stuff->stackb->nnumb < stuff->stacka->nnumb))
-			pa(stuff);
-		else if (stuff->stackb->nnumb > stuff->stacka->nnumb)
-			ft_ra(stuff, RA);
 	}
 }

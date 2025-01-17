@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:56:34 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/16 18:12:36 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:00:03 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ typedef struct s_stuff
 
 }					t_stuff;
 
-int					*bestwowmove2(int *best, int *numnow);
 void				arrange5(t_stuff *stuff);
+int					*bestwowmove2(int *best, int *numnow);
 bool				alreadystraight(t_list *tmp);
 int					pnode(t_list *stackx, int value, int sizex);
 bool				boopnode(t_list *stackx, int value, int sizex);

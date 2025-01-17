@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:53:35 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/16 18:19:28 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:19:34 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,15 @@ int	main(int ac, char **av)
 	stuff.stacka = createlist(ac - 1, av + 1);
 	if (alreadystraight(stuff.stacka) == true)
 		return (0);
-	phase1(&stuff);
-	arrange3(&stuff);
-	if (stuff.sizeb == 2)
-		arrange5(&stuff);
-	else
+	if (!(ac == 6))
+	{
+		phase1(&stuff);
+		arrange3(&stuff);
 		bempy(&stuff);
-	lawnreorder(&stuff);
+		lawnreorder(&stuff);
+	}
+	else if (ac == 6)
+		arrange5(&stuff);
 	free_list(stuff.stacka);
 	return (0);
 }
