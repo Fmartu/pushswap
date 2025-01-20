@@ -18,7 +18,7 @@ SRCS = utils.c checkargc.c stackinit.c pushswap.c  list.c OP_revrotate.c \
 
 OUT = $(SRCS:.c=.o)
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -26,7 +26,7 @@ CFLAGS = -Wall -Werror -Wextra
 	${CC} ${CFLAGS} -g -c  $< -o ${<:.c=.o}
 
 $(NAME): $(OUT)
-		gcc  -o $(NAME)  $(OUT)
+		cc  -o $(NAME)  $(OUT)
 
 all:	$(NAME)
 

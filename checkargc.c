@@ -3,14 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   checkargc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:10:56 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/17 16:54:38 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/20 18:53:45 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	multicheck(int ac, char **av)
+{
+	int				i;
+	int				j;
+	long long int	num1;
+	long long int	num2;
+
+	i = 1;
+	while (i < ac - 1)
+	{
+		num1 = atoll(av[i]);
+		j = i + 1;
+		while (j < ac)
+		{
+			num2 = atoll(av[j]);
+			if (num1 == num2)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	samesame(int ac, char **av)
 {
@@ -23,7 +47,7 @@ int	samesame(int ac, char **av)
 		j = i + 1;
 		while (j < ac)
 		{
-			if (ft_strcmp(av[i], av[j]) == 0)
+			if (ft_strcmp(av[i], av[j]) == 0 || (multicheck(ac, av) == 1))
 				return (1);
 			j++;
 		}
@@ -37,7 +61,7 @@ int	checker(int ac, char **av, int i, int j)
 	int	a;
 
 	a = 0;
-	if (ac <= 3 || (samesame(ac, av) == 1))
+	if (ac < 3 || (samesame(ac, av) == 1))
 		return (1);
 	while (av[i] && av[i][j])
 	{
@@ -47,11 +71,11 @@ int	checker(int ac, char **av, int i, int j)
 			return (1);
 		while (av[i] && av[i][j])
 		{
-			if (av[i][j] == '-')
+			if (av[i][j] == '-' || av[i][j] == '+')
 				a++;
-			if ((!((av[i][j] <= '9' && av[i][j] >= '0') || ((av[i][j] == '-')))
-				|| a > 1) || ((av[i][j] == '-'
-				&& av[i][j + 1] == '0' && av[i][j + 2] == '\0')))
+			if (((!((av[i][j] <= '9' && av[i][j] >= '0') || ((av[i][j] == '-'))
+				|| (av[i][j] == '+')) || a > 1) || ((av[i][j] == '-'
+				&& av[i][j + 1] == '0' && av[i][j + 2] == '\0'))))
 				return (1);
 			j++;
 		}
