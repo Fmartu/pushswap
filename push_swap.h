@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:56:34 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/21 18:01:45 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:24:50 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@ typedef struct s_stuff
 	int				thirdb;
 	int				max;
 	int				min;
+	int				ssize;
+	char			**lst;
 
 }					t_stuff;
 
+void					newav(char **av, t_stuff *stuff);
 void				arrange5(t_stuff *stuff);
 int					*bestwowmove2(int *best, int *numnow);
 bool				alreadystraight(t_list *tmp);
