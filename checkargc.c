@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkargc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:10:56 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/20 18:53:45 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:17:38 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	multicheck(int ac, char **av)
 	i = 1;
 	while (i < ac - 1)
 	{
-		num1 = atoll(av[i]);
+		num1 = atoi(av[i]);
 		j = i + 1;
 		while (j < ac)
 		{
-			num2 = atoll(av[j]);
+			num2 = atoi(av[j]);
 			if (num1 == num2)
 				return (1);
 			j++;
@@ -47,7 +47,7 @@ int	samesame(int ac, char **av)
 		j = i + 1;
 		while (j < ac)
 		{
-			if (ft_strcmp(av[i], av[j]) == 0 || (multicheck(ac, av) == 1))
+			if (ft_strcmp(av[i], av[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -61,7 +61,7 @@ int	checker(int ac, char **av, int i, int j)
 	int	a;
 
 	a = 0;
-	if (ac < 3 || (samesame(ac, av) == 1))
+	if ((ac < 3 || (samesame(ac, av) == 1)) || (multicheck(ac, av) == 1))
 		return (1);
 	while (av[i] && av[i][j])
 	{

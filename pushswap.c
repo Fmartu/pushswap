@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:53:35 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/17 18:15:11 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:18:08 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	{
 		if (av[1] && checker(ac, av, 0, 0) != 0)
 			err(1);
-		return (1);
+		return (0);
 	}
 	inizializer(&stuff);
 	stuff.stacka = createlist(ac - 1, av + 1);
