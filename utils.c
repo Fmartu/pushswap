@@ -6,7 +6,7 @@
 /*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:35:15 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/21 18:01:12 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:28:27 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (0);
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	{
 		i++;
+	}
 	return (s1[i] - s2[i]);
 }
 

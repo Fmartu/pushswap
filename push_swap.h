@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmartusc <fmartusc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 17:56:34 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/22 15:24:50 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:58:08 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,17 @@ typedef struct s_stuff
 	int				min;
 	int				ssize;
 	char			**lst;
-
 }					t_stuff;
 
-void					newav(char **av, t_stuff *stuff);
+size_t				ft_strlcpy(char *dest, const char *src, size_t size);
+char				*ft_strdup(const char *s);
+char				**ft_split(char const *s, char c, t_stuff *stuff);
+char				*ft_strchr(const char *str, int c);
+int					ft_strlen(const char *str);
+void				newav(char **av, t_stuff *stuff);
+void				ft_free_split(char **lst);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+void				newav(char **av, t_stuff *stuff);
 void				arrange5(t_stuff *stuff);
 int					*bestwowmove2(int *best, int *numnow);
 bool				alreadystraight(t_list *tmp);
@@ -71,7 +78,6 @@ int					ft_lstsize(t_list *lst);
 void				phase1(t_stuff *stuff);
 void				inizializer(t_stuff *stuff);
 void				free_list(t_list *top);
-void				print_list(t_list *top);
 t_list				*createlist(int ac, char **av);
 int					ope(int ret);
 int					err(int ret);
@@ -80,7 +86,6 @@ long long int		ft_atol(const char *str);
 int					checker(int ac, char **av, int i, int j);
 int					stackainita(int ac, char **av, t_list **stacka);
 int					stackainitb(int ac, t_list *stackb);
-void				print_listb(int ac, t_list **stackb);
 void				freestacka(t_list **stacka);
 void				sa(t_stuff *stuff, int op);
 void				sb(t_stuff *stuff, int op);

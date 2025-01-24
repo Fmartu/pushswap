@@ -6,7 +6,7 @@
 /*   By: fmartusc <fmartusc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:10:56 by fmartusc          #+#    #+#             */
-/*   Updated: 2025/01/21 18:17:38 by fmartusc         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:59:46 by fmartusc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,14 @@ int	samesame(int ac, char **av)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (i < ac)
 	{
 		j = i + 1;
 		while (j < ac)
 		{
+			if (!av[i] || !av[j])
+				return (2);
 			if (ft_strcmp(av[i], av[j]) == 0)
 				return (1);
 			j++;
